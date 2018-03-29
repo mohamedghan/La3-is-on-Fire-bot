@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const prefix = "3! ";
 bot.on('ready', () => {
   console.log(`Logged in as ${bot.user.tag}!`);
-  bot.user.setActivity("PLAYERUNKNOWN'S BATTLEGROUNDS", { type: 'PLAYING' });
+  bot.user.setActivity("la casa de papel", { type: 'WATCHING' });
 });
 
 /*
