@@ -24,8 +24,8 @@ bot.on('channelCreate', cha => {
   if (msg.content === prefix + 'wa9teh touledet') {
     msg.reply('touledet ' + bot.user.createdAt);
   }
-  else   if (msg.content === prefix + 'chkoun bouk w omek') {
-    msg.reply('baba tyzen w '+ msg.author + ' ommi hh' );
+  else   if (msg.content === prefix + 'chkoun bouk') {
+    msg.reply('baba tyzen');
   }
 });
 
