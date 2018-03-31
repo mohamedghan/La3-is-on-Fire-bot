@@ -21,15 +21,11 @@ bot.on('channelCreate', cha => {
 
 
 //commands
-bot.on('message', msg => {
-  if (msg.content === prefix + 'ping') {
-    msg.reply('Pong!');
-  }
-  else   if (msg.content === prefix + 'wa9teh touledet') {
+  if (msg.content === prefix + 'wa9teh touledet') {
     msg.reply('touledet ' + bot.user.createdAt);
   }
   else   if (msg.content === prefix + 'chkoun bouk w omek') {
-    msg.reply('baba TYZ w ommi na5a :D');
+    msg.reply('baba tyzen w '+ msg.author + ' ommi hh' );
   }
 });
 
