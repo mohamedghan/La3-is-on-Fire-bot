@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.3.2"
+    "discord.js": "^11.3.2",
+    "fortnite": "^3.0.0",
+    "fs": "0.0.1-security",
+    "npm": "^5.8.0",
+    "pubg-api": "^1.1.2"
   }
 }
