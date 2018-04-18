@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 const prefix = "!";
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
-    bot.user.setActivity("Fortnite", { type: 'PLAYING' });
+    bot.user.setActivity("!lol summoner name new command !!", { type: 'PLAYING' });
 });
 
 bot.on('channelCreate', function(chan) {
