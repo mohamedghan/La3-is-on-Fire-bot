@@ -12,8 +12,10 @@ bot.on('channelCreate', function(chan) {
 })
 
 bot.on('message', msg => {
+
     if (msg.author.equals(bot.user)) return;
     if (msg.channel.type !== 'text') return;
+    if (msg.guild.name == 'Big Dango Family') return;
 
 
 //commands
