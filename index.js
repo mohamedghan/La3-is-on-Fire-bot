@@ -7,10 +7,6 @@ bot.on('ready', () => {
     bot.user.setActivity("Fortnite", { type: 'PLAYING' });
 });
 
-bot.on('channelCreate', function(chan) {
-    chan.delete();
-})
-
 bot.on('message', msg => {
 
     if (msg.author.equals(bot.user)) return;
