@@ -16,7 +16,8 @@ bot.on('message', msg => {
 
 
         if (msg.content == "!fuck") {
-            msg.edit('fuck you ' + msg.author.username + ' :D');
+            msg.react(':heart:');
+            msg.reply('fuck you ' + msg.author.username + ' :D');
         }
     
     
