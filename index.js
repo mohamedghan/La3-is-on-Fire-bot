@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const https = require('https');
 const request = require('request');
 const bot = new Discord.Client();
 const prefix = "!";
