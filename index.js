@@ -10,14 +10,12 @@ bot.on('ready', () => {
 bot.on('message', msg => {
 
     if (msg.author.equals(bot.user)) return;
-    if (msg.channel.type !== 'text') return;
-    if (msg.guild.id != 408723727967191053) return;
     if (!msg.content.startsWith(prefix)) return;
 
 //commands
 
 
-        if (!msg.content == "!fuck") {
+        if (msg.content == "!fuck") {
             msg.reply('fuck you ' + msg.author.username + ' :D');
         }
     
