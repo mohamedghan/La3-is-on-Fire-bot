@@ -29,7 +29,8 @@ bot.on('message', msg => {
 
                 // The whole response has been received. Print out the result.
                 resp.on('end', () => {
-                 msg.reply(data);
+                 let base = JSON.parse(data);
+                 msg.reply(base.name);
                  });
 
                  }).on("error", (err) => {
