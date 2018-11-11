@@ -39,9 +39,9 @@ bot.on('message', msg => {
                     if (base1.status != null) {
                         msg.react('😫');
                     } else {
-                        let msg = `${base.name} is a level ${base.summonerLevel} and ${base1[0].tier} ${base1[0].rank}(${base1[0].leaguePoints}LP) boosted guy, report him and make your life much more easier!`;
+                        let msga = `${base.name} is a level ${base.summonerLevel} and ${base1[0].tier} ${base1[0].rank}(${base1[0].leaguePoints}LP) boosted guy, report him and make your life much more easier!`;
                         msg.react('♥');
-                        msg.reply(msg);
+                        msg.reply(msga);
                         }
                     });
 
