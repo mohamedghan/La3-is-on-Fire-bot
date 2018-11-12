@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const request = require('request');
 const apikey = "RGAPI-adf012d3-ebb8-4797-921e-fa4451679509";
 const bot = new Discord.Client({ autofetch: [
     'MESSAGE_CREATE',
