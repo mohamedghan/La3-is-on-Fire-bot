@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const apikey = "RGAPI-adf012d3-ebb8-4797-921e-fa4451679509";
 const bot = new Discord.Client({ autofetch: [
     'MESSAGE_CREATE',
     'MESSAGE_UPDATE',
@@ -9,7 +8,7 @@ const bot = new Discord.Client({ autofetch: [
 
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
-    bot.user.setActivity(`Under maintenance`, { type: 'PLAYING' });
+    bot.user.setActivity(`Have a nice Day !`, { type: 'PLAYING' });
 });
 
 bot.on('guildMemberAdd', (member) => {
