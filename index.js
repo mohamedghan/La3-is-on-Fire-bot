@@ -8,7 +8,7 @@ const bot = new Discord.Client({ autofetch: [
 
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
-    bot.user.setActivity(`Have a nice Day !`, { type: 'PLAYING' });
+    bot.user.setActivity(`have a nice day !`, { type: 'PLAYING' });
 });
 
 bot.on('guildMemberAdd', (member) => {
@@ -26,6 +26,7 @@ bot.on('guildMemberAdd', (member) => {
                 id: member.guild.defaultRole,
             denied: ['SEND_MESSAGES', 'READ_MESSAGES', 'READ_MESSAGE_HISTORY']
         }]).then((ch) => {
+            ch.setTopic(member.id)
             ch.send(`hi ${member.user.username}, u have to complete these little few steps to join our server !`, {
                 code: true
             });
@@ -47,14 +48,14 @@ bot.on('guildMemberRemove', (member) => {
     if (member.guild.roles.find(role => role.name == member.id) != undefined) {
         member.guild.roles.find(role => role.name == member.id).delete(); 
     }
-    if (member.guild.channels.find(ch => ch.name == 'guide-of-' + member.user.username) != undefined) {
-        member.guild.channels.find(ch => ch.name == 'guide-of-' + member.user.username).delete();
+    if (member.guild.channels.find(ch => ch.topic == member.id) != undefined) {
+        member.guild.channels.find(ch => ch.topic == member.id).delete();
     }
 })
 
 bot.on('messageReactionAdd', (react, user) => {
     if (user.bot) return;
-    if (react.message.channel.name != 'guide-of-' + user.username) return;
+    if (react.message.channel.topic != user.id) return;
     if (bot.emojis.find(emoji => emoji.name == 'LoL').equals(react.emoji)) {
         var member = bot.guilds.get('408723727967191053').members.find(member => member.user == user);
         member.setRoles(['511539866136346664'])
@@ -68,6 +69,6 @@ bot.on('messageReactionAdd', (react, user) => {
         react.message.channel.delete();
         member.setNickname(user.username + ' | Fortnite');
     } 
-}) 
+})
 
 bot.login(process.env.BOT_TOKEN);
