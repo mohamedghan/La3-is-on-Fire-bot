@@ -35,7 +35,7 @@ bot.on('guildMemberAdd', (member) => {
             var fortnite = ch.guild.emojis.find(emoji => emoji.name == 'Fortnite');
             setTimeout(() => {
                 ch.stopTyping();
-                ch.send(`- right click the icon of the game you enjoy playing the most:           1- ${lol.toString()} | 2- ${fortnite.toString()}`).then((msg) => {
+                ch.send(`- right click the icon of the game you enjoy playing the most:`, { code: true }).then((msg) => {
                     msg.react(lol);
                     msg.react(fortnite);
                 })
