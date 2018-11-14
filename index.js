@@ -85,4 +85,19 @@ bot.on('messageReactionAdd', (react, user) => {
     } 
 })
 
+bot.on("message", (msg) => {
+    if(msg.author.equals(bot.user)) return;
+    if(!msg.content.startsWith('-')) return;
+    if(msg.content.startsWith("-meme")) {
+        var link = msg.content.split(' ')[1].split('|')[1];
+        var title = msg.content.split(' ')[1].split('|')[0]
+        var hook = new Discord.WebhookClient("512389205591326720", "HalRUU_U87oe2wqfZ3hF6M85Z6W4V5XCJ2-voCa5FNqQOpLX3VZXFAh_lpb_SsQdzMUT");
+
+        hook.send(title, {
+            "file" : link
+        })
+
+    }
+})
+
 bot.login(process.env.BOT_TOKEN);
