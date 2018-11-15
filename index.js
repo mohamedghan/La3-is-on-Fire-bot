@@ -89,8 +89,8 @@ bot.on("message", (msg) => {
     if(msg.author.equals(bot.user)) return;
     if(!msg.content.startsWith('-')) return;
     if(msg.content.startsWith("-meme")) {
-        var link = msg.content.split(' ')[1].split('|')[1];
-        var title = msg.content.split(' ')[1].split('|')[0]
+        var link = msg.content.replace('-meme', '').split('|')[0];
+        var title = msg.content.replace('-meme', '').split('|')[1];
         var hook = new Discord.WebhookClient("512389205591326720", "HalRUU_U87oe2wqfZ3hF6M85Z6W4V5XCJ2-voCa5FNqQOpLX3VZXFAh_lpb_SsQdzMUT");
 
         hook.send(title, {
@@ -98,8 +98,8 @@ bot.on("message", (msg) => {
         })
 
     } else if(msg.content.startsWith("-faker")) {
-        var link = msg.content.split(' ')[1].split('|')[1];
-        var title = msg.content.split(' ')[1].split('|')[0]
+        var link = msg.content.replace('-faker', '').split('|')[0];
+        var title = msg.content.replace('-faker', '').split('|')[1];
         var hook = new Discord.WebhookClient("512691567262171137", "FkoGsB9koO-VFzLFq6o2jED2VBV9wu9IwsSSQAoMMGFybgVMlfFXFrLJK4zq_y4bCRu7");
 
         hook.send(title, {
