@@ -93,7 +93,7 @@ bot.on("message", (msg) => {
         var title = msg.content.replace('-meme ', '').split('|')[0];
         var hook = new Discord.WebhookClient("512389205591326720", "HalRUU_U87oe2wqfZ3hF6M85Z6W4V5XCJ2-voCa5FNqQOpLX3VZXFAh_lpb_SsQdzMUT");
         hook.send(title, {
-            "files" : [link]
+            "file" : link
         })
 
     } else if(msg.content.startsWith("-faker ")) {
