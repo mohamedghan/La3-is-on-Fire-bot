@@ -86,21 +86,44 @@ bot.on('messageReactionAdd', (react, user) => {
 })
 
 bot.on("message", (msg) => {
-    if(msg.author.equals(bot.user)) return;
-    if(!msg.content.startsWith('-')) return;
-    if(msg.content.startsWith("-meme")) {
-        var link = msg.content.replace('-meme', '').split('|')[0];
-        var title = msg.content.replace('-meme', '').split('|')[1];
+    if(msg.author.equals(bot.user) || msg.author.bot || msg.channel.type != "text") return;
+    if(msg.member.roles.get('426034784024657930') == undefined) return;
+    if(msg.content.startsWith("-meme ")) {
+        var link = msg.content.replace('-meme ', '').split('|')[1];
+        var title = msg.content.replace('-meme ', '').split('|')[0];
         var hook = new Discord.WebhookClient("512389205591326720", "HalRUU_U87oe2wqfZ3hF6M85Z6W4V5XCJ2-voCa5FNqQOpLX3VZXFAh_lpb_SsQdzMUT");
-
         hook.send(title, {
-            "file" : link
+            "files" : [link]
         })
 
-    } else if(msg.content.startsWith("-faker")) {
-        var link = msg.content.replace('-faker', '').split('|')[0];
-        var title = msg.content.replace('-faker', '').split('|')[1];
+    } else if(msg.content.startsWith("-faker ")) {
+        var link = msg.content.replace('-faker ', '').split('|')[1];
+        var title = msg.content.replace('-faker ', '').split('|')[0];
         var hooka = new Discord.WebhookClient("512691567262171137", "FkoGsB9koO-VFzLFq6o2jED2VBV9wu9IwsSSQAoMMGFybgVMlfFXFrLJK4zq_y4bCRu7");
+
+        hooka.send(title, {
+            "file" : link
+        })
+    } else if(msg.content.startsWith("-ninja ")) {
+        var link = msg.content.replace('-ninja ', '').split('|')[1];
+        var title = msg.content.replace('-ninja ', '').split('|')[0];
+        var hooka = new Discord.WebhookClient("512691796044677120", "pJQ7uxwh87YcZkCKN71a9_61i3v75LJU8jVa1DdH3zJqDh0n0nCOjRykU25xZ99wFsKq");
+
+        hooka.send(title, {
+            "file" : link
+        })
+    } else if(msg.content.startsWith("-sup ")) {
+        var link = msg.content.replace('-sup ', '').split('|')[1];
+        var title = msg.content.replace('-sup ', '').split('|')[0];
+        var hooka = new Discord.WebhookClient("512683853337460778", "bQqmGMJUHFJTNs5u5NyObyRetJxkFT3xZr9hm2a0HInsC9Us72SeGhlHizX5puvUXDAf");
+
+        hooka.send(title, {
+            "file" : link
+        })
+    } else if(msg.content.startsWith("-memef ")) {
+        var link = msg.content.replace('-memef ', '').split('|')[1];
+        var title = msg.content.replace('-memef ', '').split('|')[0];
+        var hooka = new Discord.WebhookClient("512708121404112897", "qKl_wXbSIfRcUlS4juaKl8OJ5WrN7tO1eqB9cNpWEqf6LtO5C7lO4g_2Z4uWESzg4TkI");
 
         hooka.send(title, {
             "file" : link
