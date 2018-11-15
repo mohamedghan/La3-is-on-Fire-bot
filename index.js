@@ -100,9 +100,9 @@ bot.on("message", (msg) => {
     } else if(msg.content.startsWith("-faker")) {
         var link = msg.content.replace('-faker', '').split('|')[0];
         var title = msg.content.replace('-faker', '').split('|')[1];
-        var hook = new Discord.WebhookClient("512691567262171137", "FkoGsB9koO-VFzLFq6o2jED2VBV9wu9IwsSSQAoMMGFybgVMlfFXFrLJK4zq_y4bCRu7");
+        var hooka = new Discord.WebhookClient("512691567262171137", "FkoGsB9koO-VFzLFq6o2jED2VBV9wu9IwsSSQAoMMGFybgVMlfFXFrLJK4zq_y4bCRu7");
 
-        hook.send(title, {
+        hooka.send(title, {
             "file" : link
         })
     }
