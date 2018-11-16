@@ -70,41 +70,48 @@ bot.on('messageReactionAdd', (react, user) => {
     if (bot.emojis.find(emoji => emoji.name == 'LoL').equals(react.emoji)) {
         var member = bot.guilds.get('408723727967191053').members.find(member => member.id == user.id);
         member.guild.roles.find(role => role.name == member.id).delete();
-        react.message.channel.fetchWebhooks().then(hooks => {
-            member.addRole('511539866136346664');
-            hooks.find(hook => hook.channelID == react.message.channel.id).delete();
-            react.message.channel.delete();
-            member.setNickname(user.username + ' | LoL');
-        }).catch(err => console.log(err));
+        member.setNickname(user.username + ' | LoL').then(()=>{
+            react.message.channel.fetchWebhooks().then(hooks => {
+                member.addRole('511539866136346664');
+                hooks.find(hook => hook.channelID == react.message.channel.id).delete();
+                react.message.channel.delete();
+            }).catch(err => console.log(err));            
+        });
+
     } else if (bot.emojis.find(emoji => emoji.name == 'Fortnite').equals(react.emoji)) {
         var member = bot.guilds.get('408723727967191053').members.find(member => member.id == user.id);
         member.guild.roles.find(role => role.name == member.id).delete();
-        react.message.channel.fetchWebhooks().then(hooks => {
-            member.addRole('511539362387984414');
-            hooks.find(hook => hook.channelID == react.message.channel.id).delete();
-            react.message.channel.delete();
-            member.setNickname(user.username + ' | Fortnite');
-        }).catch(err => console.log(err));
+        member.setNickname(user.username + ' | Fortnite').then(() => {
+            react.message.channel.fetchWebhooks().then(hooks => {
+                member.addRole('511539362387984414');
+                hooks.find(hook => hook.channelID == react.message.channel.id).delete();
+                react.message.channel.delete();
+            }).catch(err => console.log(err));
+        });
 
     } else if (bot.emojis.find(emoji => emoji.name == 'pubg').equals(react.emoji)) {
         var member = bot.guilds.get('408723727967191053').members.find(member => member.id == user.id);
         member.guild.roles.find(role => role.name == member.id).delete();
-        react.message.channel.fetchWebhooks().then(hooks => {
-            hooks.find(hook => hook.channelID == react.message.channel.id).delete();
-            react.message.channel.delete();
-            member.setNickname(user.username + ' | Pubg');
-            member.addRole('512879771948941332');
-        }).catch(err => console.log(err));
+        member.setNickname(user.username + ' | Pubg').then(() => {
+            react.message.channel.fetchWebhooks().then(hooks => {
+                hooks.find(hook => hook.channelID == react.message.channel.id).delete();
+                react.message.channel.delete();
+                member.addRole('512879771948941332');
+            }).catch(err => console.log(err));        
+        });
+
 
     } else if (bot.emojis.find(emoji => emoji.name == 'rainbow').equals(react.emoji)) {
         var member = bot.guilds.get('408723727967191053').members.find(member => member.id == user.id);
         member.guild.roles.find(role => role.name == member.id).delete();
-        react.message.channel.fetchWebhooks().then(hooks => {
-            member.addRole('512886432457818113');
-            hooks.find(hook => hook.channelID == react.message.channel.id).delete();
-            react.message.channel.delete();
-            member.setNickname(user.username + ' | R6');
-        }).catch(err => console.log(err));
+        member.setNickname(user.username + ' | R6').then(() => {
+            react.message.channel.fetchWebhooks().then(hooks => {
+                member.addRole('512886432457818113');
+                hooks.find(hook => hook.channelID == react.message.channel.id).delete();
+                react.message.channel.delete();
+            }).catch(err => console.log(err));            
+        });
+
 
     }
 })
@@ -154,5 +161,6 @@ bot.on("message", (msg) => {
         })
     }
 })
+
 
 bot.login(process.env.BOT_TOKEN);
