@@ -167,6 +167,14 @@ bot.on("message", (msg) => {
         hooka.send(title, {
             "file" : link
         })
+    } else if(msg.content.startsWith("-memer ")) {
+        var link = msg.content.replace('-memer ', '').split('|')[1];
+        var title = msg.content.replace('-memer ', '').split('|')[0];
+        var hooka = new Discord.WebhookClient("513114567572717572", "Y7iIPxkgRI4QYCO2pZsdIhCKF3VOt0hUcIiBNATZjmm5uTYgt3QuwsRHku3mFpqWQboo");
+
+        hooka.send(title, {
+            "file" : link
+        })
     }
 })
 
