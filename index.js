@@ -159,8 +159,15 @@ bot.on("message", (msg) => {
         hooka.send(title, {
             "file" : link
         })
+    } else if(msg.content.startsWith("-r6 ")) {
+        var link = msg.content.replace('-r6 ', '').split('|')[1];
+        var title = msg.content.replace('-r6 ', '').split('|')[0];
+        var hooka = new Discord.WebhookClient("513109241016352806", "Ijif4EqR16toju8Bof2d-rHNsDdScUGN4j2sk5H96m_Z4oUhYbI8whCwXr3Rt9zxPcVp");
+
+        hooka.send(title, {
+            "file" : link
+        })
     }
 })
-
 
 bot.login(process.env.BOT_TOKEN);
