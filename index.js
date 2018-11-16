@@ -170,7 +170,7 @@ bot.on("message", (msg) => {
     } else if(msg.content.startsWith("-memer ")) {
         var link = msg.content.replace('-memer ', '').split('|')[1];
         var title = msg.content.replace('-memer ', '').split('|')[0];
-        var hooka = new Discord.WebhookClient("513114567572717572", "Y7iIPxkgRI4QYCO2pZsdIhCKF3VOt0hUcIiBNATZjmm5uTYgt3QuwsRHku3mFpqWQboo");
+        var hooka = new Discord.WebhookClient("513118730125967360", "7niAhsPQyCzYnKixXnKPUBxqEZIA_Vu99tuQR7CkCq75xoSfx6hLoWKe_c1gqvQor6Ep");
 
         hooka.send(title, {
             "file" : link
