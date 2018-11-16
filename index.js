@@ -47,6 +47,7 @@ bot.on('guildMemberAdd', (member) => {
                     msg.react(lol);
                     msg.react(fortnite);
                     msg.react(pubg);
+                    msg.react(rain);
                 })
             }); 
 
@@ -153,6 +154,5 @@ bot.on("message", (msg) => {
         })
     }
 })
-
 
 bot.login(process.env.BOT_TOKEN);
