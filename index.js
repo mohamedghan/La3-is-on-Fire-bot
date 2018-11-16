@@ -36,6 +36,7 @@ bot.on('guildMemberAdd', (member) => {
 
                 var lol = ch.guild.emojis.find(emoji => emoji.name == 'LoL');
                 var fortnite = ch.guild.emojis.find(emoji => emoji.name == 'Fortnite');
+                var pubg = ch.guild.emojis.find(emoji => emoji.name == 'pubg');
 
                 webhook.send(`- react with the icon of the game you enjoy playing the most **TO ACCESS THE SERVER**:` , {
                     "code": true,
@@ -44,6 +45,7 @@ bot.on('guildMemberAdd', (member) => {
                 }).then((msg) => {
                     msg.react(lol);
                     msg.react(fortnite);
+                    msg.react(pubg);
                 })
             }); 
 
@@ -80,6 +82,16 @@ bot.on('messageReactionAdd', (react, user) => {
             hooks.find(hook => hook.channelID == react.message.channel.id).delete();
             react.message.channel.delete();
             member.setNickname(user.username + ' | Fortnite');
+        }).catch(err => console.log(err));
+
+    } else if (bot.emojis.find(emoji => emoji.name == 'pubg').equals(react.emoji)) {
+        var member = bot.guilds.get('408723727967191053').members.find(member => member.id == user.id);
+        member.setRoles(['512879771948941332'])
+        member.guild.roles.find(role => role.name == member.id).delete();
+        react.message.channel.fetchWebhooks().then(hooks => {
+            hooks.find(hook => hook.channelID == react.message.channel.id).delete();
+            react.message.channel.delete();
+            member.setNickname(user.username + ' | Pubg');
         }).catch(err => console.log(err));
 
     } 
@@ -130,6 +142,5 @@ bot.on("message", (msg) => {
         })
     }
 })
-
 
 bot.login(process.env.BOT_TOKEN);
