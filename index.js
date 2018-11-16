@@ -67,7 +67,7 @@ bot.on('messageReactionAdd', (react, user) => {
     if (react.message.channel.topic != user.id) return;
     if (bot.emojis.find(emoji => emoji.name == 'LoL').equals(react.emoji)) {
         var member = bot.guilds.get('408723727967191053').members.find(member => member.id == user.id);
-        member.setRoles(['511539866136346664'])
+        member.addRole('511539866136346664')
         member.guild.roles.find(role => role.name == member.id).delete();
         react.message.channel.fetchWebhooks().then(hooks => {
             hooks.find(hook => hook.channelID == react.message.channel.id).delete();
@@ -76,7 +76,7 @@ bot.on('messageReactionAdd', (react, user) => {
         }).catch(err => console.log(err));
     } else if (bot.emojis.find(emoji => emoji.name == 'Fortnite').equals(react.emoji)) {
         var member = bot.guilds.get('408723727967191053').members.find(member => member.id == user.id);
-        member.setRoles(['511539362387984414'])
+        member.addRole('511539362387984414')
         member.guild.roles.find(role => role.name == member.id).delete();
         react.message.channel.fetchWebhooks().then(hooks => {
             hooks.find(hook => hook.channelID == react.message.channel.id).delete();
@@ -86,7 +86,7 @@ bot.on('messageReactionAdd', (react, user) => {
 
     } else if (bot.emojis.find(emoji => emoji.name == 'pubg').equals(react.emoji)) {
         var member = bot.guilds.get('408723727967191053').members.find(member => member.id == user.id);
-        member.setRoles(['512879771948941332'])
+        member.addRole('512879771948941332')
         member.guild.roles.find(role => role.name == member.id).delete();
         react.message.channel.fetchWebhooks().then(hooks => {
             hooks.find(hook => hook.channelID == react.message.channel.id).delete();
