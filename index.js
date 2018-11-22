@@ -61,10 +61,10 @@ bot.on('guildMemberAdd', async member => {
 
 bot.on('guildMemberRemove', async member => {
     if (member.guild.roles.find(role => role.name == member.id)) {
-        member.guild.roles.find(role => role.name == member.id).delete(); 
+        await member.guild.roles.find(role => role.name == member.id).delete(); 
     }
     if (member.guild.channels.find(ch => ch.topic == member.id)) {
-        member.guild.channels.find(ch => ch.topic == member.id).delete();
+        await member.guild.channels.find(ch => ch.topic == member.id).delete();
     }
 })
 
