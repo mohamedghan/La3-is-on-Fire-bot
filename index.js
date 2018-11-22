@@ -44,13 +44,17 @@ bot.on('guildMemberAdd', async member => {
         	//here
         	let lol = await ch.guild.emojis.find(emoji => emoji.name == 'LoL');
             let fortnite = await ch.guild.emojis.find(emoji => emoji.name == 'Fortnite');
+        	let pubg = await ch.guild.emojis.find(emoji => emoji.name == 'pubg');
+            let rainbow = await ch.guild.emojis.find(emoji => emoji.name == 'rainbow');
 
         	ch.startTyping();
         	setTimeout(() => {
-        		ch.send(`Please react with the icon of the game you enjoy playing the most\n${fortnite} : Fortnite\n${lol} : League of Legends`).then(async msg => {
+        		ch.send(`Please react with the icon of the game you enjoy playing the most\n${fortnite} : Fortnite\n${lol} : League of Legends\n${pubg} : PUBG\n${rainbow} : rainbow six siege`).then(async msg => {
         			//here
         			await msg.react(lol);
         			await msg.react(fortnite);
+        			await msg.react(pubg);
+        			await msg.react(rainbow);
         		});
         		ch.stopTyping();
         	}, 3000)
@@ -89,10 +93,21 @@ bot.on('messageReactionAdd', async (react, user) => {
     		await react.message.channel.delete();
     		dRole.delete();
     		break;
+    	case 'pubg':
+    		await member.setNickname(user.username + ' | PUBG');
+    		await member.addRole(con.roles.fortnite);
+    		await react.message.channel.delete();
+    		dRole.delete();
+    		break;
+    	case 'rainbow':
+    		await member.setNickname(user.username + ' | R6');
+    		await member.addRole(con.roles.fortnite);
+    		await react.message.channel.delete();
+    		dRole.delete();
+    		break;
     	default :
     		await react.message.channel.send(`This reaction can't be used here!`);
     }
 
 });
-
 bot.login(process.env.BOT_TOKEN);
