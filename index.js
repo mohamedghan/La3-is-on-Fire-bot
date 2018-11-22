@@ -95,13 +95,13 @@ bot.on('messageReactionAdd', async (react, user) => {
     		break;
     	case 'pubg':
     		await member.setNickname(user.username + ' | PUBG');
-    		await member.addRole(con.roles.fortnite);
+    		await member.addRole(con.roles.pubg);
     		await react.message.channel.delete();
     		dRole.delete();
     		break;
     	case 'rainbow':
     		await member.setNickname(user.username + ' | R6');
-    		await member.addRole(con.roles.fortnite);
+    		await member.addRole(con.roles.rain);
     		await react.message.channel.delete();
     		dRole.delete();
     		break;
@@ -110,4 +110,3 @@ bot.on('messageReactionAdd', async (react, user) => {
     }
 
 });
-bot.login(process.env.BOT_TOKEN);
