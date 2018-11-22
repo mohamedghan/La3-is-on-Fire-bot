@@ -110,3 +110,9 @@ bot.on('messageReactionAdd', async (react, user) => {
     }
 
 });
+
+
+bot.login(process.env.BOT_TOKEN);
+
+
+
