@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 
 module.exports.run = async (bot, msg, args, con) => {
-	    data = args.join();
+	    data = args.join(' ');
 	    let text = data.split(';')[0];
 	    let link = data.split(';')[1];
         var hooka = new Discord.WebhookClient(con.webhooks.fmeme.id, con.webhooks.fmeme.token);
