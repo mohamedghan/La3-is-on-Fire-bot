@@ -110,9 +110,19 @@ bot.on('messageReactionAdd', async (react, user) => {
     }
 
 });
+bot.on('message', async (msg) => {
+    if(msg.author.bot) return;
+    if(msg.channel.type === 'dm') return;
+
+    let prefix = con.prefix;
+    let msgarray = msg.content.split(' ');
+    let cmd = msgarray[0];
+    let args = msgarray.slice(1);
+
+    let cmdfile = bot.commands.get(cmd.slice(prefix.length));
+
+    if(cmdfile) cmdfile.run(bot, msg, args, con);
+});
 
 
 bot.login(process.env.BOT_TOKEN);
-
-
-
