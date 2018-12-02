@@ -7,5 +7,39 @@
 		"fortnite": "511539362387984414",
 		"pubg": "512879771948941332",
 		"rain": "512886432457818113"
+	},
+	"webhooks": {
+		"faker": {
+			"id": "512691567262171137",
+			"token": "FkoGsB9koO-VFzLFq6o2jED2VBV9wu9IwsSSQAoMMGFybgVMlfFXFrLJK4zq_y4bCRu7"
+		},
+		"ninja": {
+			"id": "512691796044677120",
+			"token": "pJQ7uxwh87YcZkCKN71a9_61i3v75LJU8jVa1DdH3zJqDh0n0nCOjRykU25xZ99wFsKq"
+		},
+		"fmeme": {
+			"id": "512708121404112897",
+			"token": "qKl_wXbSIfRcUlS4juaKl8OJ5WrN7tO1eqB9cNpWEqf6LtO5C7lO4g_2Z4uWESzg4TkI"
+		},
+		"rmeme": {
+			"id": "513114567572717572",
+			"token": "Y7iIPxkgRI4QYCO2pZsdIhCKF3VOt0hUcIiBNATZjmm5uTYgt3QuwsRHku3mFpqWQboo"
+		},
+		"rainbow": {
+			"id": "513109241016352806",
+			"token": "Ijif4EqR16toju8Bof2d-rHNsDdScUGN4j2sk5H96m_Z4oUhYbI8whCwXr3Rt9zxPcVp"
+		},
+		"pubg": {
+			"id": "518921469950951427",
+			"token": "55qBJxrfPom9rcutnFeA0JJuK2y83TBnJN02JxA9rRWSWYH7KnK0DWhWrvTmOO8jjpqM"
+		},
+		"support": {
+			"id": "512683853337460778",
+			"token": "bQqmGMJUHFJTNs5u5NyObyRetJxkFT3xZr9hm2a0HInsC9Us72SeGhlHizX5puvUXDAf"
+		},
+		"lmeme": {
+			"id": "512389205591326720",
+			"token": "HalRUU_U87oe2wqfZ3hF6M85Z6W4V5XCJ2-voCa5FNqQOpLX3VZXFAh_lpb_SsQdzMUT"
+		}
 	}
 }
