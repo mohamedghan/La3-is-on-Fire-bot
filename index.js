@@ -111,7 +111,6 @@ bot.on('messageReactionAdd', async (react, user) => {
 
 });
 bot.on('message', async (msg) => {
-    if(msg.author.bot) return;
     if(msg.channel.type === 'dm') return;
 
     let prefix = con.prefix;
