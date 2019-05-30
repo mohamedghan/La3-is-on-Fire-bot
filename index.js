@@ -35,7 +35,7 @@ bot.on('guildMemberAdd', async member => {
         color: "#f86f6f"
     }).then( async role => {
     	member.addRole(role);
-    	await member.guild.createChannel('guide of ' + member.user.username, 'text', [{
+    	await member.guild.createChannel('->' + member.user.username + '<-', 'text', [{
             id: role.id,
             allowed: ['SEND_MESSAGES', 'READ_MESSAGES', 'READ_MESSAGE_HISTORY']
         }]).then( async ch => {
