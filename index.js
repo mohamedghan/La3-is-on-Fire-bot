@@ -111,7 +111,7 @@ bot.on('messageReactionAdd', async (react, user) => {
 
 });
 bot.on('message', async (msg) => {
-    if(msg.channel.type === 'dm') return;
+    if(msg.author.bot) return;
 
     let prefix = con.prefix;
     let msgarray = msg.content.split(' ');
@@ -122,6 +122,16 @@ bot.on('message', async (msg) => {
 
     if(cmdfile) cmdfile.run(bot, msg, args, con);
 });
+
+bot.on('voiceStateUpdate', (omem,nmem) => {
+	if(nmem !== undefined) {
+		if (nmem.displayName.includes('TEAM 1') && nmem.voiceChannel && nmem.voiceChannel.id !== '511547293842014210') {
+			nmem.setVoiceChannel('511547293842014210')
+		} else if (nmem.displayName.includes('TEAM 2') && nmem.voiceChannel && nmem.voiceChannel.id !== '511547326771494913') {
+			nmem.setVoiceChannel('511547326771494913')
+		}
+	}
+})
 
 
 bot.login(process.env.BOT_TOKEN);
