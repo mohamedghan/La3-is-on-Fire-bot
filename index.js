@@ -74,10 +74,10 @@ bot.on('guildMemberRemove', async member => {
 
 bot.on('messageReactionAdd', async (react, user) => {
 	if (user.bot) return;
-    if (react.message.channel.topic != user.id) return;
+	let guild = await bot.guilds.get(con.guildId);
+    if (!guild.members.has(react.message.channel.topic)) return;
     let cEmoji = react.emoji.name;
-    let guild = await bot.guilds.get(con.guildId);
-    let member = await guild.members.find(member => member.id == user.id);
+    let member = await guild.members.get(react.message.channel.topic);
     let dRole = await guild.roles.find(role => role.name == member.id);
     //here
     switch (cEmoji) {
@@ -110,6 +110,8 @@ bot.on('messageReactionAdd', async (react, user) => {
     }
 
 });
+
+
 bot.on('message', async (msg) => {
     if(msg.author.bot) return;
 
