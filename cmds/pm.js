@@ -49,13 +49,15 @@ module.exports.run = async (bot, msg, args, con) => {
     if (msg.channel.id !== con.adminsch) return;
     var message = args.slice(2).join(' ');
     var channel = await msg.mentions.channels.first();
-    var dest = await msg.mentions.members.first();
+    var dest = await msg.mentions.members;
     var sender = await msg.member;
     var result = crypt(message);
     channel.send(`${sender} to ${dest}: ${result[0]}`);
-    dest.user.send(`crypting code: || ${result[1]} ||
-this code will be deleted after 10 minutes!`).then(m => {
-        m.delete(1000*60*10)
+    dest.every(mem => {
+        mem.user.send(`crypting code: || ${result[1]} ||
+        this code will be deleted after 10 minutes!`).then(m => {
+            m.delete(1000 * 60 * 10)
+        })
     })
 }
 
