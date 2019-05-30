@@ -5,7 +5,7 @@ module.exports.run = async (bot, msg, args, con) => {
 	if(!msg.member.voiceChannel) return;
 	var ch = await msg.member.voiceChannel;
 	ch.join().then(connection => {
-		const dispatcher = connection.playFile('./b.mp3');
+		const dispatcher = connection.playFile(__dirname + '/b.mp3');
 	});
 }
 
