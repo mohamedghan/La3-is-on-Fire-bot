@@ -83,21 +83,25 @@ bot.on('messageReactionAdd', async (react, user) => {
     switch (cEmoji) {
     	case 'LoL':
     		await member.addRole(con.roles.lol);
+		await member.setNickname('');
     		await react.message.channel.delete();
     		dRole.delete();
     		break;
     	case 'Fortnite':
     		await member.addRole(con.roles.fortnite);
+		await member.setNickname('');
     		await react.message.channel.delete();
     		dRole.delete();
     		break;
     	case 'pubg':
     		await member.addRole(con.roles.pubg);
+		await member.setNickname('');
     		await react.message.channel.delete();
     		dRole.delete();
     		break;
     	case 'rainbow':
     		await member.addRole(con.roles.rain);
+		await member.setNickname('');
     		await react.message.channel.delete();
     		dRole.delete();
     		break;
