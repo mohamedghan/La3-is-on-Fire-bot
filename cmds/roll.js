@@ -15,7 +15,7 @@ module.exports.run = async (bot, msg, args, con) => {
 	var team1= [],team2 = [];
 	if(mems.size % 2 != 0) return;
 	var channel = await msg.mentions.channels.first();
-	while(mems.size > 0 && team1.length <= mems.size/2 && team2.length <= mems.size/2) {
+	while(team1.length <= mems.size/2 && team2.length <= mems.size/2) {
 		var chosen = mems.random();
 		team1.push(chosen);
 		mems = mems.filter(mem => mem.id != chosen.id);
