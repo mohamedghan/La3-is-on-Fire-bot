@@ -125,7 +125,7 @@ bot.on('message', async (msg) => {
     if(cmdfile) cmdfile.run(bot, msg, args, con);
 });
 
-bot.on('voiceStateUpdate', (omem,nmem) => {
+/*bot.on('voiceStateUpdate', (omem,nmem) => {
 	if(nmem !== undefined) {
 		if (nmem.displayName.includes('TEAM 1') && nmem.voiceChannel && nmem.voiceChannel.id !== '511547293842014210') {
 			nmem.setVoiceChannel('511547293842014210')
@@ -133,7 +133,7 @@ bot.on('voiceStateUpdate', (omem,nmem) => {
 			nmem.setVoiceChannel('511547326771494913')
 		}
 	}
-})
+})*/
 
 
 bot.login(process.env.BOT_TOKEN);
