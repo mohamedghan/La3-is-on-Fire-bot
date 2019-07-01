@@ -9,10 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.1",
-    "btoa": "^1.2.1",
     "discord.js": "^11.4.2",
-    "googleapis": "^40.0.0",
     "jimp": "^0.6.4"
   }
 }
